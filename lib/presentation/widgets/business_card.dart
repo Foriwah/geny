@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:geny/domain/entities/business_entity.dart';
 
 class BusinessCard extends StatelessWidget {
-  const BusinessCard({super.key});
+  final BusinessEntity business;
+  const BusinessCard({super.key, required this.business});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        title: const Text('Business 1'),
-        subtitle: const Text('Description of Business 1'),
+        title: Text(business.name),
+        subtitle: Text(business.location),
         trailing: IconButton(
           icon: const Icon(Icons.keyboard_arrow_right),
           onPressed: () {

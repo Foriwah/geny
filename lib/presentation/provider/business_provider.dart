@@ -27,6 +27,8 @@ class BusinessProvider with ChangeNotifier {
     try {
       final result = await getBusinessesUseCase.call();
 
+      print('Fetched businesses: $result');
+
       if (result.isEmpty) {
         _state = BusinessState.empty;
       } else {
